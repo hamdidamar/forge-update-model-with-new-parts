@@ -1,0 +1,163 @@
+[04/09/2021 13:54:21] Job information:
+"CommandLine":[
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[UpdateParameters].path)\" /ilod \"$(args[InventorDoc].path)\" /paramFile \"$(args[InventorParams].path)\" /p",
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[CreateSVF].path)\" /ilod \"$(args[InventorDoc].path)\"",
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[CreateBOM].path)\" /i \"$(args[InventorDoc].path)\""
+]
+"Settings":{
+  "dasreportfaileduploadoptional": {
+    "value": "true",
+    "isEnvironmentVariable": true
+  }
+}
+"Id":"b6546bdd10e74f058eda85aa747de8c9"
+"ActivityId":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.UpdateProject+alpha"
+"Engine.Id":"Autodesk.Inventor!26"
+"Apps": [
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.UpdateParameters!1",
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateSVF!1",
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateBOM!1"
+]
+"BoundArguments":{
+  "InventorDoc": {
+    "localName": "unzippedIam",
+    "pathInZip": "OnlineConfigurator A2 Model Source 0.2.0/KGYP19015A2.iam",
+    "url": "https://developer.api.autodesk.com/Masked:fYxYf51G9dQQQ0ZRlYBp4CbEc5E="
+  },
+  "InventorParams": {
+    "url": "https://developer.api.autodesk.com/Masked:HjiQVBj8f55N6qxVC8sE/u2aVig="
+  },
+  "OutputModelIAMFile": {
+    "zip": true,
+    "optional": true,
+    "localName": "unzippedIam",
+    "url": "https://developer.api.autodesk.com/Masked:jvdT4hIcQeUH2FwilFQRq3CANTo=",
+    "verb": "put"
+  },
+  "OutputModelIPTFile": {
+    "optional": true,
+    "localName": "part.ipt",
+    "url": "https://developer.api.autodesk.com/Masked:5HboR+nkgdABzOihkOLYuXW5RwQ=",
+    "verb": "put"
+  },
+  "UpdateParametersOutput": {
+    "localName": "documentParams.json",
+    "url": "https://developer.api.autodesk.com/Masked:5zp07omIwfZyTccumx9DQyiYmI8=",
+    "verb": "put"
+  },
+  "CreateSVFOutput": {
+    "zip": true,
+    "localName": "SvfOutput",
+    "url": "https://developer.api.autodesk.com/Masked:TSgabhwRzw0ij1VkbiNk81MpYT0=",
+    "verb": "put"
+  },
+  "CreateBOMOutput": {
+    "localName": "bom.json",
+    "url": "https://developer.api.autodesk.com/Masked:LNupumGxQu5PNB3u+e5XNnV04Pk=",
+    "verb": "put"
+  },
+  "onProgress": {
+    "ondemand": true,
+    "url": "https://wlnr5sjl3a.execute-api.us-east-1.amazonaws.com/Masked:UK/Z3b5X3xUWxXiH6C9r9i9UlRU=",
+    "headers": {
+      "Content-Type": "application/json",
+      "x-das-authorize": "awssigv4(us-east-1)",
+      "x-ads-token-data": "{\"access_token\":{\"client_id\":\"vgo9tNW26KwiinEEenskTAE1FUQz27VW\"},\"scope\":\"code:all\",\"expires_in\":792,\"client_id\":\"vgo9tNW26KwiinEEenskTAE1FUQz27VW\"}"
+    },
+    "verb": "put"
+  }
+}
+"Quotas":{
+  "limitProcessingTimeSec": 900,
+  "limitTotalUncompressedAppsSizeInMB": 500
+}
+[04/09/2021 13:54:21] Folder "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam" has been created.
+[04/09/2021 13:54:21] Folder "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\SvfOutput" has been created.
+[04/09/2021 13:54:21] Starting work item b6546bdd10e74f058eda85aa747de8c9
+[04/09/2021 13:54:21] Start download phase.
+[04/09/2021 13:54:21] Start downloading input: verb - 'GET', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/2e5272c0-1cc5-408b-97d0-bdc5dddded5d?region=US'
+[04/09/2021 13:54:21] Start downloading input: verb - 'GET', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/931b56be-4f39-4c8d-917e-bf931605c272?region=US'
+[04/09/2021 13:54:21] '230' bytes have been written to T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\1dca9e9fcfe44b2b922c7d2608b8c93e.input-params.json.
+[04/09/2021 13:54:21] End downloading file 'https://developer.api.autodesk.com/oss/v2/signedresources/931b56be-4f39-4c8d-917e-bf931605c272?region=US'.
+[04/09/2021 13:54:25] '94111181' bytes have been written to T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\zip_1954.zip.
+[04/09/2021 13:54:25] End downloading file 'https://developer.api.autodesk.com/oss/v2/signedresources/2e5272c0-1cc5-408b-97d0-bdc5dddded5d?region=US'.
+[04/09/2021 13:54:28] T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\zip_1954.zip has been unpacked to folder T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam.
+[04/09/2021 13:54:28] End download phase successfully.
+[04/09/2021 13:54:28] Start preparing script and command line parameters.
+[04/09/2021 13:54:28] Command line: [ /al "T:\Aces\Applications\436b69ed6aa8d6f96870373ab334a4bb.vgo9tNW26KwiinEEenskTAE1FUQz27VW.UpdateParameters[1].package" /ilod "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0/KGYP19015A2.iam" /paramFile "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\1dca9e9fcfe44b2b922c7d2608b8c93e.input-params.json" /p]
+[04/09/2021 13:54:28] Command line: [ /al "T:\Aces\Applications\477815cbbbfaf87b2eb2cb5cf8d4a843.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateSVF[1].package" /ilod "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0/KGYP19015A2.iam"]
+[04/09/2021 13:54:28] Command line: [ /al "T:\Aces\Applications\3d1b2fe19e28a1d077477aa49587c6bc.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateBOM[1].package" /i "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0/KGYP19015A2.iam"]
+[04/09/2021 13:54:28] End preparing script and command line parameters.
+[04/09/2021 13:54:28] Start script phase.
+[04/09/2021 13:54:28] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_b6546bdd10e74f058eda85aa747de8c9 "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\userdata" /exe "T:\Aces\AcesRoot\25.00\coreEngine\Exe\InventorCoreConsole.exe"  /al "T:\Aces\Applications\436b69ed6aa8d6f96870373ab334a4bb.vgo9tNW26KwiinEEenskTAE1FUQz27VW.UpdateParameters[1].package" /ilod "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0/KGYP19015A2.iam" /paramFile "T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\1dca9e9fcfe44b2b922c7d2608b8c93e.input-params.json" /p.
+[04/09/2021 13:54:28] Start Inventor Core Engine standard output dump.
+[04/09/2021 13:54:28] InventorCoreConsole.exe Information: 0 : InventorCoreConsole.exe: 25.0.18300.0, 459-98dcc84
+[04/09/2021 13:54:28] InventorCoreConsole.exe Information: 0 : Starting Inventor Server.
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Started Inventor Server 2021.1 (Build 251245000, 245) (25, 10, 24500, 0000)
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[04/09/2021 13:54:29]     iLogic Plugin: initializing...
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Creating default project file with name: FDADefault at T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Activating default project T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\FDADefault.ipj
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Getting Inventor plug-in.
+[04/09/2021 13:54:29] InventorCoreConsole.exe Information: 0 : Plug-in: UpdateParametersPlugin
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : Activating plug-in: UpdateParametersPlugin
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : : UpdateParametersPlugin (1.0.0.10): initializing... 
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : Opening /ilod document name: T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0/KGYP19015A2.iam
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : LastActiveDesignViewRepresentation: Default
+[04/09/2021 13:54:29]     InventorCoreConsole.exe Information: 0 : LastActiveLevelOfDetailRepresentation: Master
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Full document name: T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\KGYP19015A2.iam
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : ExecWithArguments called with KGYP19015A2.iam with 6 arguments
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : HeartBeating every 50000ms.
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Read parameters
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : {"WallConstruction":{"value":"\u0022Standard Construction\u0022"},"Width":{"value":"5000 mm"},"Length":{"value":"7500 mm"},"Height":{"value":"3000 mm"},"Components":{"value":"-"},"Joints":{"value":"2500,2500,2500;1500,1500,2000"}}
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Skipping 'WallConstruction'
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Skipping 'Width'
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Skipping 'Length'
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Skipping 'Height'
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Applying '-' to 'Components'
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Checking expression validity on update for "-" and unit type Text / 11346
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Applying '2500,2500,2500;1500,1500,2000' to 'Joints'
+[04/09/2021 13:54:30]     InventorCoreConsole.exe Information: 0 : Checking expression validity on update for "2500,2500,2500;1500,1500,2000" and unit type Text / 11346
+[04/09/2021 13:54:31]     InventorCoreConsole.exe Information: 0 :  Joints 2500,2500,2500;1500,1500,2000 
+[04/09/2021 13:54:31]     InventorCoreConsole.exe Information: 0 :  PushParameterToPart T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\Generated Files\Grid1.ipt Dimension 523.4
+[04/09/2021 13:54:32]     InventorCoreConsole.exe Information: 0 :  PushParameterToPart T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\Generated Files\Grid1.ipt GridTag 1
+[04/09/2021 13:54:32]     InventorCoreConsole.exe Information: 0 :  Grid 1 
+[04/09/2021 13:54:32]     InventorCoreConsole.exe Information: 0 :  PushParameterToPart T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\Generated Files\Grid2.ipt Dimension 523.4
+[04/09/2021 13:54:32]     InventorCoreConsole.exe Information: 0 :  PushParameterToPart T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\Generated Files\Grid2.ipt GridTag 2
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 :  Grid 2 
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 :  PushParameterToPart T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\Generated Files\Grid3.ipt Dimension 523.4
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 :  PushParameterToPart T:\Aces\Jobs\b6546bdd10e74f058eda85aa747de8c9\unzippedIam\OnlineConfigurator A2 Model Source 0.2.0\Generated Files\Grid3.ipt GridTag 3
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 :  Grid 3 
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 : Updating
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 : Ending HeartBeat
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Error: 0 : ExecuteAutomation exception: Exception has been thrown by the target of an invocation.
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Error: 0 :  -- ex.StackTrace --------------------------------------------------------------- 
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Error: 0 :    at System.RuntimeType.ForwardCallToInvokeMember(String memberName, BindingFlags flags, Object target, Int32[] aWrapperTypes, MessageData& msgData)
+[04/09/2021 13:54:33]    at Inventor._DocumentClass.Update2(Boolean AcceptErrorsAndContinue)
+[04/09/2021 13:54:33]    at PluginUtilities.ParametersExtractor.Extract(Document doc, Parameters parameters, InventorParameters updateResultParameters) in C:\Users\hamdi\OneDrive\Masaüstü\son\forgeDragDrop\AppBundles\PluginUtilities\ParametersExtractor.cs:line 38
+[04/09/2021 13:54:33]    at UpdateParametersPlugin.UpdateParametersAutomation.ExecWithArguments(Document doc, NameValueMap map) in C:\Users\hamdi\OneDrive\Masaüstü\son\forgeDragDrop\AppBundles\UpdateParametersPlugin\UpdateParametersAutomation.cs:line 101
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Error: 0 :  -- ex.StackTrace --------------------------------------------------------------- 
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 : Deactivating plug-in: UpdateParametersPlugin
+[04/09/2021 13:54:33]     InventorCoreConsole.exe Information: 0 : : UpdateParametersPlugin: deactivating... 
+[04/09/2021 13:54:33] Processing failed
+[04/09/2021 13:54:34] End Inventor Core Engine standard output dump.
+[04/09/2021 13:54:34] Error: Application InventorCoreConsole.exe exits with code -1 which indicates an error.
+[04/09/2021 13:54:34] End script phase.
+[04/09/2021 13:54:35] Error: An unexpected error happened during phase CoreEngineExecution of job.
+[04/09/2021 13:54:35] Job finished with result FailedExecution
+[04/09/2021 13:54:35] Job Status:
+{
+  "status": "failedInstructions",
+  "reportUrl": "https://dasprod-store.s3.amazonaws.com/workItem/vgo9tNW26KwiinEEenskTAE1FUQz27VW/b6546bdd10e74f058eda85aa747de8c9/report.txt?AWSAccessKeyId=ASIATGVJZKM3ILLEZYZS&Expires=1618066461&x-amz-security-token=IQoJb3JpZ2luX2VjEB4aCXVzLWVhc3QtMSJGMEQCIDPrVNGcP0wbVTqbM9OdN74rfB1L0LPUanh8ZzaI4b1sAiA%2FT1FXlZ2e6UYgiI9y877T1YLDUA9Yo1J%2F7hUxwm1a4CrVAQh3EAIaDDIyMDQ3MzE1MjMxMCIMLzN0fEKz95Rn%2BB9%2FKrIBSDSE34mRORaROm0PcpwRF13fKHfkxL5WSO%2Fw16Bu24nH5MvEwuX6sSNOuRjkaUQtvKxojvmxRCLbfOqNZ%2BK4sVnGu7xNnlO2Ux6%2BFwKQUOGa%2Bkz4cxVGqoS8dukA8ocY6KkK0jwehgN6hS1iVQZIUinxLyGK%2Fmab4beDcEjr0%2BHtoYe8S%2BSXhUFfXLpTMSRZRY1rtnm9ZPLkggAzz1W9roFwfmfRgRmVDZlpk19L%2FxxYVTDAssGDBjrhAbzSp9JuRmylYA14FThHtim4Ggi0YLfpjU4UtIlsVkPLkYBw8Db7uUuxPxUYtuINDTjXhAL%2Faa3k5an1jPETZiwEzIvlKn2SxQbwtHpdsQgaswYIZq6gWY9taeB2iZG8lAm2o7zIPjSuKTJe0hFjctZkiQwArWuE0oSfPSf7T7pGdFAsZKFWlhb90WHlhBjXM%2Fd4WpHQxR2am2xxJYy99FRlbAat2fbICaTVc6rbm5B78h8PSrB4aV4YyrwMGvJXB735qrnKrAZRzmKT1P55MH4hoyCe7iGf0s6Xk0pmhiRTPw%3D%3D&Signature=LJycYyxAfgKde%2FA3yicqaMlZRhw%3D",
+  "stats": {
+    "timeQueued": "2021-04-09T13:54:21.0329571Z",
+    "timeDownloadStarted": "2021-04-09T13:54:21.1777677Z",
+    "timeInstructionsStarted": "2021-04-09T13:54:28.5467464Z",
+    "timeInstructionsEnded": "2021-04-09T13:54:34.9829915Z",
+    "bytesDownloaded": 94111411
+  },
+  "id": "b6546bdd10e74f058eda85aa747de8c9"
+}
