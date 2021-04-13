@@ -168,8 +168,8 @@ export default function RegisterAddPartTool() {
                         fetch("/api/viewables/token")
                             .then(response => response.text())
                             .then(token => {
-                                Autodesk.Viewing.endpoint.setEndpointAndApi("https://developer.api.autodesk.com", 'modelDerivativeV2');
-                                Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"] = "Bearer " + token;
+                                //Autodesk.Viewing.endpoint.setEndpointAndApi("https://developer.api.autodesk.com", 'modelDerivativeV2');
+                                //Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"] = "Bearer " + token;
                                 loadDocument(loadedModelUrn, fragProxy);
                                 //PlacementAgain(loadedModel)
                             })

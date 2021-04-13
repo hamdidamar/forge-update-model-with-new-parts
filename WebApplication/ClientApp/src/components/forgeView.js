@@ -42,11 +42,11 @@ export class ForgeView extends Component {
       this.viewer = null;
     }
 
-    handleScriptLoad() {
+    async handleScriptLoad() {
+        const tokenResponse = await fetch("/api/viewables/token");
+        const token = await tokenResponse.text();
 
-        const options = repo.hasAccessToken() ?
-                            { accessToken: repo.getAccessToken() } :
-                            { env: 'Local' };
+        const options = { accessToken: token };
 
         Autodesk = window.Autodesk;
 
@@ -66,7 +66,7 @@ export class ForgeView extends Component {
         Autodesk.Viewing.Initializer(options, this.handleViewerInit.bind(this));
     }
 
-    handleViewerInit() {
+    async handleViewerInit() {
         const errorCode = this.viewer.start();
         if (errorCode)
             return;
@@ -92,6 +92,7 @@ export class ForgeView extends Component {
         if (!this.props.activeProject.svf)
             return;
 
+       
         Autodesk.Viewing.Document.load(
             this.getSvfUrl(), this.onDocumentLoadSuccess.bind(this), () => {}
         );
