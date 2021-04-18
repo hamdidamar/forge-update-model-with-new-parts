@@ -31,6 +31,9 @@ export default function RegisterAddPartTool() {
 
             let matrixArr = [];
 
+            // main token
+            var originalAuthorizationHeader = Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"];
+
             //-----ACTIVATE TRIGGER-----------
             this.activate = function () {
                 loadedModel = null;
@@ -75,6 +78,8 @@ export default function RegisterAddPartTool() {
                     alertify.warning("Please select model!");
                 }
 
+                console.log(originalAuthorizationHeader);
+
 
             };
             //-----DEACTIVATE TRIGGER--------
@@ -95,6 +100,10 @@ export default function RegisterAddPartTool() {
                 // set style
                 var ex = document.getElementsByClassName("addPartExtensionIcon");
                 ex[0].style.backgroundColor = "";
+
+                // for update model with main token
+                Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"] = originalAuthorizationHeader;
+                console.log(Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"]);
             };
             //-----MOUSE SETTINGS----------
             function normalize(screenPoint) {

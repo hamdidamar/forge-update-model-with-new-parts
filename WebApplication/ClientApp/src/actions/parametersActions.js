@@ -144,7 +144,7 @@ export function formatParameters(clientParameters) {
     return invFormatedParameters;
 }
 
-export const updateModelWithParameters = (project, data) => async (dispatch) => {
+export const updateModelWithParameters = (projectId, data) => async (dispatch) => {
     dispatch(addLog('updateModelWithParameters invoked'));
 
     // update 'data' parameters back to inventor format
@@ -154,11 +154,9 @@ export const updateModelWithParameters = (project, data) => async (dispatch) => 
     // launch progress dialog immediately before we start connection to the server
     dispatch(showModalProgress(true));
 
-    const projectId = project.id;
-    const currentHash = project.hash;
 
     try {
-        await jobManager.doUpdateJob(projectId, currentHash, invFormattedParameters,
+        await jobManager.doUpdateJob(projectId, invFormattedParameters,
             // start job
             () => {
                 dispatch(addLog('JobManager: HubConnection started for project : ' + projectId));

@@ -40,13 +40,15 @@ import 'alertifyjs/build/css/alertify.css';
 
 export class ParametersContainer extends Component {
 
+    isManualJointUpdate = false;
 
     componentDidMount() {
         this.props.fetchParameters(this.props.activeProject.id);
         try {
             var parames = document.getElementsByClassName("parameter");
-            parames[4].style.display = "none";
-            parames[5].style.display = "none";
+            // parames[4].style.display = "none";
+            // parames[5].style.display = "none";
+            // parames[6].style.display = "none";
         } catch (error) {
             console.log(error);
         }
@@ -58,8 +60,9 @@ export class ParametersContainer extends Component {
             this.props.fetchParameters(this.props.activeProject.id);
 
         var parames = document.getElementsByClassName("parameter");
-        parames[4].style.display = "none";
-        parames[5].style.display = "none";
+        // parames[4].style.display = "none";
+        // parames[5].style.display = "none";
+        // parames[6].style.display = "none";
     }
 
     updateClicked() {
@@ -67,9 +70,16 @@ export class ParametersContainer extends Component {
         //get information 
         this.getPartsInfoWithPositions();
 
-        this.props.updateModelWithParameters(this.props.activeProject, this.props.projectUpdateParameters);
+        this.props.updateModelWithParameters(this.props.activeProject.id, this.props.projectUpdateParameters);
+
+        // //clear all custom parameters
+        // this.props.projectUpdateParameters[4].value ="-";
+        // this.props.projectUpdateParameters[5].value ="-";
+        // this.props.projectUpdateParameters[6].value ="-";
 
         // mark drawing as not valid if any available
+        this.props.invalidateDrawing();
+
         this.props.invalidateDrawing();
 
     }
@@ -258,23 +268,49 @@ export class ParametersContainer extends Component {
         //set parameters
 
         // dimensions parameter
-        //this.props.projectUpdateParameters[4].value = "WallConstruction:" + this.props.projectUpdateParameters[0].value + ";Width:" + this.props.projectUpdateParameters[1].value.replace("mm", "") + ";Length:" + this.props.projectUpdateParameters[2].value.replace("mm", "") + ";Height:" + this.props.projectUpdateParameters[3].value.replace("mm", "");
+
+        if (this.isManualJointUpdate == false) {
+            //dimension
+            this.props.projectUpdateParameters[4].value = "WallConstruction:" + this.props.projectUpdateParameters[0].value + ";Width:" + this.props.projectUpdateParameters[1].value.replace("mm", "") + ";Length:" + this.props.projectUpdateParameters[2].value.replace("mm", "") + ";Height:" + this.props.projectUpdateParameters[3].value.replace("mm", "");
+        }
+        else{
+            //dimensions
+            this.props.projectUpdateParameters[4].value = "-";
+            //components
+            this.props.projectUpdateParameters[6].value = "-";
+        }
+
+        
+
 
         //panel and hardwares parameter
         if (strİnfo != "") {
-            this.props.projectUpdateParameters[4].value = strİnfo;
+            this.props.projectUpdateParameters[6].value = strİnfo;
+            this.props.projectUpdateParameters[4].value = "-";
         }
         else {
-            this.props.projectUpdateParameters[4].value = "-";
+            this.props.projectUpdateParameters[6].value = "-";
         }
 
         //console.log(this.props.projectUpdateParameters);
 
+        console.log("joints");
+        console.log(this.props.projectUpdateParameters[5].value);
+
+        console.log("components");
+        console.log(this.props.projectUpdateParameters[6].value);
+
+        console.log("dimensions");
+        console.log(this.props.projectUpdateParameters[4].value);
+
+        
 
     }
 
     // manual joint click function
     manualJoint() {
+
+        this.isManualJointUpdate = true;
 
         var widthValue = this.props.projectUpdateParameters[1].value.replace("mm", "");
         var lengthValue = this.props.projectUpdateParameters[2].value.replace("mm", "");
@@ -308,25 +344,33 @@ export class ParametersContainer extends Component {
                 }
             }
 
-            if (totalAlphabetical == widthValue &&  totalNumerical == lengthValue) {
-                
+            if (totalAlphabetical == widthValue && totalNumerical == lengthValue) {
+
+                //Fill dimension parameter 
+                //this.props.projectUpdateParameters[4].value = "-";
+
                 // Fill joint parameter
-                this.props.projectUpdateParameters[5].value = numericalValue  + ";"+ alphabeticalValue ;
-                //console.log(this.props.projectUpdateParameters[5].value)
-        
+                this.props.projectUpdateParameters[5].value = "WallConstruction:" + this.props.projectUpdateParameters[0].value + ";Width:" + this.props.projectUpdateParameters[1].value + ";Length:" + this.props.projectUpdateParameters[2].value + ";Height:" + this.props.projectUpdateParameters[3].value + ";Joints:" + numericalValue + "-" + alphabeticalValue;
+                
+
                 // Then make update
                 this.updateClicked();
 
+                // joint parameter
+                this.props.projectUpdateParameters[5].value ="-";
 
-            }else{
-                alertify.set('notifier','delay', 5);
+                this.isManualJointUpdate = false;
+
+
+            } else {
+                alertify.set('notifier', 'delay', 5);
                 alertify.error("The sum of the alphabetical values ​​you enter must equal the width and the sum of the numerical values ​​to the length")
             }
-            
+
 
         } else {
             alertify.error("Values ​​cannot be entered blank.")
-            
+
         }
 
 

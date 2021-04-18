@@ -99,15 +99,15 @@ namespace WebApplication.Processing
         /// Update project state with the parameters (or take it from cache).
         /// </summary>
         public async Task<(ProjectStateDTO dto, FdaStatsDTO stats, string reportUrl)> DoSmartUpdateAsync(InventorParameters parameters,
-            string projectId, string currentHash = null, bool bForceUpdate = false)
+            string projectId, bool bForceUpdate = false)
         {
-            var newHash = Crypto.GenerateParametersHashString(parameters);
-            _logger.LogInformation($"Incoming parameters hash is {newHash}");
+            var hash = Crypto.GenerateParametersHashString(parameters);
+            _logger.LogInformation($"Incoming parameters hash is {hash}");
 
             var storage = await _userResolver.GetProjectStorageAsync(projectId);
 
             FdaStatsDTO stats;
-            var localNames = storage.GetLocalNames(newHash);
+            var localNames = storage.GetLocalNames(hash);
 
             string reportUrl;
 
@@ -118,25 +118,25 @@ namespace WebApplication.Processing
 
                 // restore statistics
                 var bucket = await _userResolver.GetBucketAsync();
-                var statsNative = await bucket.DeserializeAsync<List<Statistics>>(storage.GetOssNames(newHash).StatsUpdate);
+                var statsNative = await bucket.DeserializeAsync<List<Statistics>>(storage.GetOssNames(hash).StatsUpdate);
                 stats = FdaStatsDTO.CreditsOnly(statsNative);
                 reportUrl = null;
             }
             else
             {
                 string resultingHash;
-                (resultingHash, stats, reportUrl) = await UpdateAsync(storage, parameters, newHash, currentHash, bForceUpdate);
-                if (!newHash.Equals(resultingHash, StringComparison.Ordinal))
+                (resultingHash, stats, reportUrl) = await UpdateAsync(storage, parameters, hash, bForceUpdate);
+                if (!hash.Equals(resultingHash, StringComparison.Ordinal))
                 {
                     _logger.LogInformation($"Update returned different parameters. Hash is {resultingHash}.");
-                    await CopyStateAsync(storage.Project, resultingHash, newHash, storage.IsAssembly);
+                    await CopyStateAsync(storage.Project, resultingHash, hash, storage.IsAssembly);
 
                     // update 
-                    newHash = resultingHash;
+                    hash = resultingHash;
                 }
             }
 
-            var dto = _dtoGenerator.MakeProjectDTO<ProjectStateDTO>(storage, newHash);
+            var dto = _dtoGenerator.MakeProjectDTO<ProjectStateDTO>(storage, hash);
             dto.Parameters = Json.DeserializeFile<InventorParameters>(localNames.Parameters);
 
             return (dto, stats, reportUrl);
@@ -311,19 +311,19 @@ namespace WebApplication.Processing
         /// </summary>
         /// <returns>Resulting parameters hash</returns>
         private async Task<(string hash, FdaStatsDTO stats, string reportUrl)> UpdateAsync(ProjectStorage storage, InventorParameters parameters,
-            string newHash, string currentHash = null, bool bForceUpdate = false)
+            string hash,  bool bForceUpdate = false)
         {
             _logger.LogInformation("Update the project");
             var bucket = await _userResolver.GetBucketAsync();
 
-            var isUpdateExists = bForceUpdate ? false : await IsGenerated(bucket, storage.GetOssNames(newHash));
+            var isUpdateExists = bForceUpdate ? false : await IsGenerated(bucket, storage.GetOssNames(hash));
             FdaStatsDTO stats;
             string reportUrl;
 
             if (isUpdateExists)
             {
                 _logger.LogInformation("Detected existing outputs at OSS");
-                var statsNative = await bucket.DeserializeAsync<List<Statistics>>(storage.GetOssNames(newHash).StatsUpdate);
+                var statsNative = await bucket.DeserializeAsync<List<Statistics>>(storage.GetOssNames(hash).StatsUpdate);
                 stats = FdaStatsDTO.CreditsOnly(statsNative);
                 reportUrl = null;
             }
@@ -331,8 +331,7 @@ namespace WebApplication.Processing
             {
                 Project project = storage.Project;
 
-                var sourceModel = currentHash == null ? storage.Project.OSSSourceModel : storage.GetOssNames(currentHash).GetCurrentModel(storage.IsAssembly);
-                var inputDocUrl = await bucket.CreateSignedUrlAsync(sourceModel);
+                var inputDocUrl = await bucket.CreateSignedUrlAsync(project.OSSSourceModel);
 
                 UpdateData updateData = await _arranger.ForUpdateAsync(inputDocUrl, storage.Metadata.TLA, parameters);
 
@@ -347,20 +346,20 @@ namespace WebApplication.Processing
 
                 // rearrange generated data according to the parameters hash
                 // NOTE: hash might be changed if Inventor adjust them!
-                newHash = await _arranger.MoveViewablesAsync(project, storage.IsAssembly);
+                hash = await _arranger.MoveViewablesAsync(project, storage.IsAssembly);
 
                 // process statistics
-                await bucket.UploadAsJsonAsync(storage.GetOssNames(newHash).StatsUpdate, result.Stats);
+                await bucket.UploadAsJsonAsync(storage.GetOssNames(hash).StatsUpdate, result.Stats);
                 stats = FdaStatsDTO.All(result.Stats);
                 reportUrl = result.ReportUrl;
             }
 
-            _logger.LogInformation($"Cache the project locally ({newHash})");
+            _logger.LogInformation($"Cache the project locally ({hash})");
 
             // and now cache the generated stuff locally
-            await storage.EnsureViewablesAsync(bucket, newHash);
+            await storage.EnsureViewablesAsync(bucket, hash);
 
-            return (newHash, stats, reportUrl);
+            return (hash, stats, reportUrl);
         }
 
         /// <summary>

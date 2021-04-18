@@ -1,0 +1,75 @@
+[04/18/2021 05:44:54] Job information:
+"CommandLine":[
+  "\"$(appbundles[TransferData].path)\\EmptyExePlugin.bundle\\Contents\\EmptyExePlugin.exe\""
+]
+"Settings":{
+  "dasreportfaileduploadoptional": {
+    "value": "true",
+    "isEnvironmentVariable": true
+  }
+}
+"Id":"1cb64a8f2b524e5a97644369ea1fdb7d"
+"ActivityId":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.TransferData+alpha"
+"Engine.Id":"Autodesk.AutoCAD!22"
+"Apps": [
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.TransferData!1"
+]
+"BoundArguments":{
+  "source": {
+    "localName": "fileForTransfer",
+    "url": "https://sdra-default-projects.s3.us-west-2.amazonaws.com/Masked:en+PNDCJS8qzjJ46yj7umnWBa4s="
+  },
+  "target": {
+    "localName": "fileForTransfer",
+    "url": "https://developer.api.autodesk.com/Masked:L6Ae74R1nXczod/mxEMXRCA/PLs=",
+    "verb": "put"
+  },
+  "onProgress": {
+    "ondemand": true,
+    "url": "https://wlnr5sjl3a.execute-api.us-east-1.amazonaws.com/Masked:UK/Z3b5X3xUWxXiH6C9r9i9UlRU=",
+    "headers": {
+      "Content-Type": "application/json",
+      "x-das-authorize": "awssigv4(us-east-1)",
+      "x-ads-token-data": "{\"access_token\":{\"client_id\":\"vgo9tNW26KwiinEEenskTAE1FUQz27VW\"},\"scope\":\"code:all\",\"expires_in\":3512,\"client_id\":\"vgo9tNW26KwiinEEenskTAE1FUQz27VW\"}"
+    },
+    "verb": "put"
+  }
+}
+"Quotas":{
+  "limitProcessingTimeSec": 100,
+  "limitTotalUncompressedAppsSizeInMB": 500
+}
+[04/18/2021 05:44:54] Starting work item 1cb64a8f2b524e5a97644369ea1fdb7d
+[04/18/2021 05:44:54] Start download phase.
+[04/18/2021 05:44:54] Start downloading input: verb - 'GET', url - 'https://sdra-default-projects.s3.us-west-2.amazonaws.com/Wheel_multi_IDW.zip'
+[04/18/2021 05:44:56] '41730011' bytes have been written to T:\Aces\Jobs\1cb64a8f2b524e5a97644369ea1fdb7d\fileForTransfer.
+[04/18/2021 05:44:56] End downloading file 'https://sdra-default-projects.s3.us-west-2.amazonaws.com/Wheel_multi_IDW.zip'.
+[04/18/2021 05:44:56] End download phase successfully.
+[04/18/2021 05:44:56] Start preparing script and command line parameters.
+[04/18/2021 05:44:56] Command line: []
+[04/18/2021 05:44:56] Identified standalone application at T:\Aces\AcesRoot\22.0\coreEngine\Exe\HostApp.exe.
+[04/18/2021 05:44:56] End preparing script and command line parameters.
+[04/18/2021 05:44:56] Start script phase.
+[04/18/2021 05:44:56] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_1cb64a8f2b524e5a97644369ea1fdb7d "T:\Aces\Jobs\1cb64a8f2b524e5a97644369ea1fdb7d\userdata" /exe "T:\Aces\AcesRoot\22.0\coreEngine\Exe\HostApp.exe" .
+[04/18/2021 05:44:56] Start application HostApp.exe standard output dump.
+[04/18/2021 05:44:57] End application HostApp.exe standard output dump.
+[04/18/2021 05:44:57] End script phase.
+[04/18/2021 05:44:57] Start upload phase.
+[04/18/2021 05:44:57] Uploading 'T:\Aces\Jobs\1cb64a8f2b524e5a97644369ea1fdb7d\fileForTransfer': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/aad826e3-3afe-431b-9495-b300261c282b?region=US'
+[04/18/2021 05:45:00] End upload phase successfully.
+[04/18/2021 05:45:00] Job finished with result Succeeded
+[04/18/2021 05:45:00] Job Status:
+{
+  "status": "success",
+  "reportUrl": "https://dasprod-store.s3.amazonaws.com/workItem/vgo9tNW26KwiinEEenskTAE1FUQz27VW/1cb64a8f2b524e5a97644369ea1fdb7d/report.txt?AWSAccessKeyId=ASIATGVJZKM3NUESWNTF&Expires=1618728774&x-amz-security-token=IQoJb3JpZ2luX2VjEO7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIA33o4o3o8fz6ZShY6W2%2BpRHARq28XEC9r1RvGnpqyjJAiEAtQHO6z03kfgfj%2BrQNpxZCUrD2APnZKtq4x5ctDLs7s4q1QEIVxACGgwyMjA0NzMxNTIzMTAiDFWwapOGgfmz%2BpVtHSqyAU3Fo6e%2FHge0TwKFFof%2Ftjqw7H7KFb%2Fo5v%2F9KZhEfwISnHUZIdpkIyoeT5AJn5Zi6ru%2BEblEGNbb50ngPNF5J4HOc4jdvYIidZn6%2BMxZqYvA62TUcuo1f1cHQbdEtiirZ1dEF2ALKM5jROjr36cop8Oc1Zmifr45%2BYaax0v4WmOST8APN8k0BoBefYgzU1KOtjgV4K8kv4DTpv%2BTKefiRsPtKuqA5i6s0FrmJXUJe2raBowwlYrvgwY64AEDKVQj2HBMQ3z7En5wWGdreH%2BTxb7S0rh30hm8jLnAvrlo9OThVRsOm88DkY3uvOhn%2Fvnh3D3rRPUf%2F3sGpXvkMzzPuP15ldfZF%2BFM7CoJsQg08IUd8JtxHEb5vt3jEbaFhINzQC4uAg47%2BtlJQ7WK6AGWvmp%2Bic9wTPaKk%2F7KpeCE41%2FibKX3insttxc2lvEyLID3Eun%2B%2FoJhcgqiWrUT3EN7hLDEq51OLRU1kJjxBBsDqsnjzzbMraNvC1z%2BeDusQ9JuEQ2NW0hYDURilwfqKQ%2BhtXwwphI%2B31MAMwp0yg%3D%3D&Signature=0fN99Ss12tRRmOL0hvLWTGwU5lw%3D",
+  "stats": {
+    "timeQueued": "2021-04-18T05:44:54.3874281Z",
+    "timeDownloadStarted": "2021-04-18T05:44:54.4745501Z",
+    "timeInstructionsStarted": "2021-04-18T05:44:56.1536482Z",
+    "timeInstructionsEnded": "2021-04-18T05:44:57.414427Z",
+    "timeUploadEnded": "2021-04-18T05:45:00.108572Z",
+    "bytesDownloaded": 41730011,
+    "bytesUploaded": 41730011
+  },
+  "id": "1cb64a8f2b524e5a97644369ea1fdb7d"
+}

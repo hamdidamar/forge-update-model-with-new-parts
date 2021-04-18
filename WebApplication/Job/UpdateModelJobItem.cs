@@ -29,11 +29,10 @@ namespace WebApplication.Job
         public InventorParameters Parameters { get; }
         private readonly string _currentHash;
 
-        public UpdateModelJobItem(ILogger logger, string projectId, string currentHash, InventorParameters parameters, ProjectWork projectWork)
+        public UpdateModelJobItem(ILogger logger, string projectId, InventorParameters parameters, ProjectWork projectWork)
             : base(logger, projectId, projectWork)
         {
             Parameters = parameters;
-            _currentHash = currentHash;
         }
 
         public override async Task ProcessJobAsync(IResultSender resultSender)
@@ -42,7 +41,7 @@ namespace WebApplication.Job
 
             Logger.LogInformation($"ProcessJob (Update) {Id} for project {ProjectId} started.");
 
-            (ProjectStateDTO state, FdaStatsDTO stats, string reportUrl) = await ProjectWork.DoSmartUpdateAsync(Parameters, ProjectId, _currentHash);
+            (ProjectStateDTO state, FdaStatsDTO stats, string reportUrl) = await ProjectWork.DoSmartUpdateAsync(Parameters, ProjectId);
 
             Logger.LogInformation($"ProcessJob (Update) {Id} for project {ProjectId} completed.");
 

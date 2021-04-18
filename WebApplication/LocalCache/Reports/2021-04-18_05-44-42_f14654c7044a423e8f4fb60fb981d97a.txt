@@ -1,0 +1,316 @@
+[04/18/2021 05:44:19] Job information:
+"CommandLine":[
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[DataChecker].path)\" /i \"$(args[InventorDoc].path)\"",
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[CreateSVF].path)\" /ilod \"$(args[InventorDoc].path)\"",
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[CreateThumbnail].path)\" /ilod \"$(args[InventorDoc].path)\"",
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[CreateBOM].path)\" /i \"$(args[InventorDoc].path)\"",
+  "$(engine.path)\\InventorCoreConsole.exe /al \"$(appbundles[ExtractParameters].path)\" /ilod \"$(args[InventorDoc].path)\""
+]
+"Settings":{
+  "dasreportfaileduploadoptional": {
+    "value": "true",
+    "isEnvironmentVariable": true
+  }
+}
+"Id":"f14654c7044a423e8f4fb60fb981d97a"
+"ActivityId":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.AdoptProject+alpha"
+"Engine.Id":"Autodesk.Inventor!26"
+"Apps": [
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.DataChecker!1",
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateSVF!1",
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateThumbnail!1",
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateBOM!1",
+"App.Id":"vgo9tNW26KwiinEEenskTAE1FUQz27VW.ExtractParameters!1"
+]
+"BoundArguments":{
+  "InventorDoc": {
+    "localName": "unzippedIam",
+    "pathInZip": "Wrench.iam",
+    "url": "https://developer.api.autodesk.com/Masked:zhRk4DaBV+rhNVAzFsxTGJYKVFk="
+  },
+  "DataCheckerOutput": {
+    "localName": "drawings-list.json",
+    "url": "https://developer.api.autodesk.com/Masked:RgXVJ3DiayvEfOajrr+/RlRK19Y=",
+    "verb": "put"
+  },
+  "DataCheckerMessages": {
+    "localName": "adopt-messages.json",
+    "url": "https://developer.api.autodesk.com/Masked:ZSgbxnfSm43C3fcUOazauqfzxh0=",
+    "verb": "put"
+  },
+  "CreateSVFOutput": {
+    "zip": true,
+    "localName": "SvfOutput",
+    "url": "https://developer.api.autodesk.com/Masked:tGBfWYSvl4LELQafBuYWJ2WhSjs=",
+    "verb": "put"
+  },
+  "CreateThumbnailOutput": {
+    "localName": "thumbnail.png",
+    "url": "https://developer.api.autodesk.com/Masked:/bWmxYk3U43KgLo5gxKn5twNXuE=",
+    "verb": "put"
+  },
+  "CreateBOMOutput": {
+    "localName": "bom.json",
+    "url": "https://developer.api.autodesk.com/Masked:71LCPvqGPjVOpYs3mwz1RCk02e8=",
+    "verb": "put"
+  },
+  "ExtractParametersOutput": {
+    "localName": "documentParams.json",
+    "url": "https://developer.api.autodesk.com/Masked:GKsF4B4r72DBkQl3LeRls/1uCFM=",
+    "verb": "put"
+  },
+  "OutputModelIAMFile": {
+    "zip": true,
+    "optional": true,
+    "localName": "unzippedIam",
+    "url": "https://developer.api.autodesk.com/Masked:gDjc/BG7p8od3GJP2VaxOXR0f7s=",
+    "verb": "put"
+  },
+  "OutputModelIPTFile": {
+    "optional": true,
+    "localName": "part.ipt",
+    "url": "https://developer.api.autodesk.com/Masked:8xXZPzBS7m07bYc64IjSFqiDnY8=",
+    "verb": "put"
+  },
+  "onProgress": {
+    "ondemand": true,
+    "url": "https://wlnr5sjl3a.execute-api.us-east-1.amazonaws.com/Masked:UK/Z3b5X3xUWxXiH6C9r9i9UlRU=",
+    "headers": {
+      "Content-Type": "application/json",
+      "x-das-authorize": "awssigv4(us-east-1)",
+      "x-ads-token-data": "{\"access_token\":{\"client_id\":\"vgo9tNW26KwiinEEenskTAE1FUQz27VW\"},\"scope\":\"code:all\",\"expires_in\":3548,\"client_id\":\"vgo9tNW26KwiinEEenskTAE1FUQz27VW\"}"
+    },
+    "verb": "put"
+  }
+}
+"Quotas":{
+  "limitProcessingTimeSec": 900,
+  "limitTotalUncompressedAppsSizeInMB": 500
+}
+[04/18/2021 05:44:19] Folder "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\SvfOutput" has been created.
+[04/18/2021 05:44:19] Folder "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam" has been created.
+[04/18/2021 05:44:19] Starting work item f14654c7044a423e8f4fb60fb981d97a
+[04/18/2021 05:44:19] Start download phase.
+[04/18/2021 05:44:19] Start downloading input: verb - 'GET', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/88695f0e-88a2-42d0-a71b-94b1ec56fb8a?region=US'
+[04/18/2021 05:44:19] '5954845' bytes have been written to T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\zip_4162.zip.
+[04/18/2021 05:44:19] End downloading file 'https://developer.api.autodesk.com/oss/v2/signedresources/88695f0e-88a2-42d0-a71b-94b1ec56fb8a?region=US'.
+[04/18/2021 05:44:19] T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\zip_4162.zip has been unpacked to folder T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam.
+[04/18/2021 05:44:19] End download phase successfully.
+[04/18/2021 05:44:19] Start preparing script and command line parameters.
+[04/18/2021 05:44:19] Command line: [ /al "T:\Aces\Applications\fd5c3b31f3b6aef42ae711efdfa2b29d.vgo9tNW26KwiinEEenskTAE1FUQz27VW.DataChecker[1].package" /i "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam"]
+[04/18/2021 05:44:19] Command line: [ /al "T:\Aces\Applications\8d933e2ef291397b98f3e85918b296fd.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateSVF[1].package" /ilod "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam"]
+[04/18/2021 05:44:19] Command line: [ /al "T:\Aces\Applications\88727df267eec4fd8908d63161424c78.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateThumbnail[1].package" /ilod "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam"]
+[04/18/2021 05:44:19] Command line: [ /al "T:\Aces\Applications\d2f3ef1ad9285220ed9dad4a6889a0d7.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateBOM[1].package" /i "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam"]
+[04/18/2021 05:44:19] Command line: [ /al "T:\Aces\Applications\042eab9f2f2d3ec8052d77e374f5a6c2.vgo9tNW26KwiinEEenskTAE1FUQz27VW.ExtractParameters[1].package" /ilod "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam"]
+[04/18/2021 05:44:19] End preparing script and command line parameters.
+[04/18/2021 05:44:19] Start script phase.
+[04/18/2021 05:44:19] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_f14654c7044a423e8f4fb60fb981d97a "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\userdata" /exe "T:\Aces\AcesRoot\25.00\coreEngine\Exe\InventorCoreConsole.exe"  /al "T:\Aces\Applications\fd5c3b31f3b6aef42ae711efdfa2b29d.vgo9tNW26KwiinEEenskTAE1FUQz27VW.DataChecker[1].package" /i "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam".
+[04/18/2021 05:44:19] Start Inventor Core Engine standard output dump.
+[04/18/2021 05:44:20] InventorCoreConsole.exe Information: 0 : InventorCoreConsole.exe: 25.0.18300.0, 459-98dcc84
+[04/18/2021 05:44:20] InventorCoreConsole.exe Information: 0 : Starting Inventor Server.
+[04/18/2021 05:44:20] InventorCoreConsole.exe Information: 0 : Started Inventor Server 2021.1 (Build 251245000, 245) (25, 10, 24500, 0000)
+[04/18/2021 05:44:20] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:20]     InventorCoreConsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[04/18/2021 05:44:20]     iLogic Plugin: initializing...
+[04/18/2021 05:44:20] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:20] InventorCoreConsole.exe Information: 0 : Opening document: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam Invisible mode: False
+[04/18/2021 05:44:21] InventorCoreConsole.exe Information: 0 : Opened
+[04/18/2021 05:44:21] InventorCoreConsole.exe Information: 0 : Getting Inventor plug-in.
+[04/18/2021 05:44:21] InventorCoreConsole.exe Information: 0 : Plug-in: DataCheckerPlugin
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Activating plug-in: DataCheckerPlugin
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : : DataCheckerPlugin (1.0.0.16): initializing... 
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Executing 'Run' method on Automation object.
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : HeartBeating every 50000ms.
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Extracting drawings list
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : DEFAULT drawing is : NONE
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Detecting unsupported addins
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Scan document for missing references
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Collected user messages:
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : [
+[04/18/2021 05:44:21]   {
+[04/18/2021 05:44:21]     "text": "Found 0 drawings",
+[04/18/2021 05:44:21]     "severity": 0
+[04/18/2021 05:44:21]   }
+[04/18/2021 05:44:21] ]
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Ending HeartBeat
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Performing iLogic diagnostics...
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : End of iLogic diagnostics...
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : Deactivating plug-in: DataCheckerPlugin
+[04/18/2021 05:44:21]     InventorCoreConsole.exe Information: 0 : : DataCheckerPlugin: deactivating... 
+[04/18/2021 05:44:22] End Inventor Core Engine standard output dump.
+[04/18/2021 05:44:22] End script phase.
+[04/18/2021 05:44:22] Start script phase.
+[04/18/2021 05:44:22] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_f14654c7044a423e8f4fb60fb981d97a "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\userdata" /exe "T:\Aces\AcesRoot\25.00\coreEngine\Exe\InventorCoreConsole.exe"  /al "T:\Aces\Applications\8d933e2ef291397b98f3e85918b296fd.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateSVF[1].package" /ilod "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam".
+[04/18/2021 05:44:22] Start Inventor Core Engine standard output dump.
+[04/18/2021 05:44:22] InventorCoreConsole.exe Information: 0 : InventorCoreConsole.exe: 25.0.18300.0, 459-98dcc84
+[04/18/2021 05:44:22] InventorCoreConsole.exe Information: 0 : Starting Inventor Server.
+[04/18/2021 05:44:23] InventorCoreConsole.exe Information: 0 : Started Inventor Server 2021.1 (Build 251245000, 245) (25, 10, 24500, 0000)
+[04/18/2021 05:44:23] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[04/18/2021 05:44:23]     iLogic Plugin: initializing...
+[04/18/2021 05:44:23] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:23] InventorCoreConsole.exe Information: 0 : Getting Inventor plug-in.
+[04/18/2021 05:44:23] InventorCoreConsole.exe Information: 0 : Plug-in: CreateSVFPlugin
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : Activating plug-in: CreateSVFPlugin
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : : CreateSVFPlugin (1.0.0.3): initializing... 
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : Opening /ilod document name: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : LastActiveDesignViewRepresentation: Master
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : LastActiveLevelOfDetailRepresentation: Master
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : Full document name: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : Processing T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : ** Saving SVF
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : HeartBeating every 50000ms.
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : SVF Translator addin is available
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : SVF save
+[04/18/2021 05:44:23]     InventorCoreConsole.exe Information: 0 : SVF files are output to: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\SvfOutput
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : SVF can be exported.
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : ** Saved SVF as T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\SvfOutput\result.collaboration
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : Ending HeartBeat
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : Performing iLogic diagnostics...
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : End of iLogic diagnostics...
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : Deactivating plug-in: CreateSVFPlugin
+[04/18/2021 05:44:29]     InventorCoreConsole.exe Information: 0 : : CreateSVFPlugin: deactivating... 
+[04/18/2021 05:44:30] End Inventor Core Engine standard output dump.
+[04/18/2021 05:44:30] End script phase.
+[04/18/2021 05:44:30] Start script phase.
+[04/18/2021 05:44:30] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_f14654c7044a423e8f4fb60fb981d97a "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\userdata" /exe "T:\Aces\AcesRoot\25.00\coreEngine\Exe\InventorCoreConsole.exe"  /al "T:\Aces\Applications\88727df267eec4fd8908d63161424c78.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateThumbnail[1].package" /ilod "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam".
+[04/18/2021 05:44:30] Start Inventor Core Engine standard output dump.
+[04/18/2021 05:44:30] InventorCoreConsole.exe Information: 0 : InventorCoreConsole.exe: 25.0.18300.0, 459-98dcc84
+[04/18/2021 05:44:30] InventorCoreConsole.exe Information: 0 : Starting Inventor Server.
+[04/18/2021 05:44:31] InventorCoreConsole.exe Information: 0 : Started Inventor Server 2021.1 (Build 251245000, 245) (25, 10, 24500, 0000)
+[04/18/2021 05:44:31] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[04/18/2021 05:44:31]     iLogic Plugin: initializing...
+[04/18/2021 05:44:31] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:31] InventorCoreConsole.exe Information: 0 : Getting Inventor plug-in.
+[04/18/2021 05:44:31] InventorCoreConsole.exe Information: 0 : Plug-in: CreateThumbnailPlugin
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : Activating plug-in: CreateThumbnailPlugin
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : : CreateThumbnailPlugin (1.0.0.6): initializing...
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : Opening /ilod document name: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : LastActiveDesignViewRepresentation: Master
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : LastActiveLevelOfDetailRepresentation: Master
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : Full document name: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:31]     InventorCoreConsole.exe Information: 0 : Processing T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:33]     InventorCoreConsole.exe Information: 0 : Saved thumbnail as T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\thumbnail.png
+[04/18/2021 05:44:33]     InventorCoreConsole.exe Information: 0 : Performing iLogic diagnostics...
+[04/18/2021 05:44:33]     InventorCoreConsole.exe Information: 0 : End of iLogic diagnostics...
+[04/18/2021 05:44:33]     InventorCoreConsole.exe Information: 0 : Deactivating plug-in: CreateThumbnailPlugin
+[04/18/2021 05:44:33]     InventorCoreConsole.exe Information: 0 : : CreateThumbnailPlugin: deactivating... 
+[04/18/2021 05:44:34] End Inventor Core Engine standard output dump.
+[04/18/2021 05:44:34] End script phase.
+[04/18/2021 05:44:34] Start script phase.
+[04/18/2021 05:44:34] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_f14654c7044a423e8f4fb60fb981d97a "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\userdata" /exe "T:\Aces\AcesRoot\25.00\coreEngine\Exe\InventorCoreConsole.exe"  /al "T:\Aces\Applications\d2f3ef1ad9285220ed9dad4a6889a0d7.vgo9tNW26KwiinEEenskTAE1FUQz27VW.CreateBOM[1].package" /i "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam".
+[04/18/2021 05:44:34] Start Inventor Core Engine standard output dump.
+[04/18/2021 05:44:34] InventorCoreConsole.exe Information: 0 : InventorCoreConsole.exe: 25.0.18300.0, 459-98dcc84
+[04/18/2021 05:44:34] InventorCoreConsole.exe Information: 0 : Starting Inventor Server.
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Started Inventor Server 2021.1 (Build 251245000, 245) (25, 10, 24500, 0000)
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:35]     InventorCoreConsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[04/18/2021 05:44:35]     iLogic Plugin: initializing...
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Opening document: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam Invisible mode: False
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Opened
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Getting Inventor plug-in.
+[04/18/2021 05:44:35] InventorCoreConsole.exe Information: 0 : Plug-in: ExportBOMPlugin
+[04/18/2021 05:44:35]     InventorCoreConsole.exe Information: 0 : Activating plug-in: ExportBOMPlugin
+[04/18/2021 05:44:35]     InventorCoreConsole.exe Information: 0 : : ExportBOMPlugin (1.0.0.4): initializing... 
+[04/18/2021 05:44:35]     InventorCoreConsole.exe Information: 0 : Executing 'Run' method on Automation object.
+[04/18/2021 05:44:35]     InventorCoreConsole.exe Information: 0 : Processing T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:35]     InventorCoreConsole.exe Information: 0 : HeartBeating every 50000ms.
+[04/18/2021 05:44:36]     InventorCoreConsole.exe Information: 0 : Ending HeartBeat
+[04/18/2021 05:44:36]     InventorCoreConsole.exe Information: 0 : Performing iLogic diagnostics...
+[04/18/2021 05:44:36]     InventorCoreConsole.exe Information: 0 : End of iLogic diagnostics...
+[04/18/2021 05:44:36]     InventorCoreConsole.exe Information: 0 : Deactivating plug-in: ExportBOMPlugin
+[04/18/2021 05:44:36]     InventorCoreConsole.exe Information: 0 : : ExportBOMPlugin: deactivating... 
+[04/18/2021 05:44:37] End Inventor Core Engine standard output dump.
+[04/18/2021 05:44:37] End script phase.
+[04/18/2021 05:44:37] Start script phase.
+[04/18/2021 05:44:37] ### Command line arguments: /isolate HKEY_CURRENT_USER\SOFTWARE\AppDataLow\Software\Autodesk\CoreUser\WorkItem_f14654c7044a423e8f4fb60fb981d97a "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\userdata" /exe "T:\Aces\AcesRoot\25.00\coreEngine\Exe\InventorCoreConsole.exe"  /al "T:\Aces\Applications\042eab9f2f2d3ec8052d77e374f5a6c2.vgo9tNW26KwiinEEenskTAE1FUQz27VW.ExtractParameters[1].package" /ilod "T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam".
+[04/18/2021 05:44:37] Start Inventor Core Engine standard output dump.
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : InventorCoreConsole.exe: 25.0.18300.0, 459-98dcc84
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : Starting Inventor Server.
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : Started Inventor Server 2021.1 (Build 251245000, 245) (25, 10, 24500, 0000)
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[04/18/2021 05:44:38]     iLogic Plugin: initializing...
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : Getting Inventor plug-in.
+[04/18/2021 05:44:38] InventorCoreConsole.exe Information: 0 : Plug-in: ExtractParametersPlugin
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : Activating plug-in: ExtractParametersPlugin
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : : ExtractParametersPlugin (2.0.0.14): initializing... 
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : Opening /ilod document name: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : LastActiveDesignViewRepresentation: Master
+[04/18/2021 05:44:38]     InventorCoreConsole.exe Information: 0 : LastActiveLevelOfDetailRepresentation: Master
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Full document name: T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam\Wrench.iam
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Run called with Wrench.iam
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : HeartBeating every 50000ms.
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for "Small" and unit type Text / 11346
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Error: 0 : Can't get nominalValue for WrenchSz: Could not convert argument 1 for call to GetPreciseStringFromValue.
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0.00 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 8.84 deg and unit type deg / 11279
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0.000 in and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 127 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0.7 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0.000 in and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0.7 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 10 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for JawOffset and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for "Copper" and unit type Text / 11346
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Error: 0 : Can't get nominalValue for PartMaterial: Could not convert argument 1 for call to GetPreciseStringFromValue.
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 193 deg and unit type deg / 11279
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 0.000 mm and unit type mm / 11269
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 180.5 deg and unit type deg / 11279
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Checking expression validity on extraction for 1 ul and unit type ul / 11265
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Updating
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Saving
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Found 1 iLogic forms
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 :  - Configurations
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Using 'Configurations' form as a parameter filter
+[04/18/2021 05:44:39]     InventorCoreConsole.exe Information: 0 : Closing
+[04/18/2021 05:44:40]     InventorCoreConsole.exe Information: 0 : Ending HeartBeat
+[04/18/2021 05:44:40]     InventorCoreConsole.exe Information: 0 : Performing iLogic diagnostics...
+[04/18/2021 05:44:40]     InventorCoreConsole.exe Information: 0 : End of iLogic diagnostics...
+[04/18/2021 05:44:40]     InventorCoreConsole.exe Information: 0 : Deactivating plug-in: ExtractParametersPlugin
+[04/18/2021 05:44:40]     InventorCoreConsole.exe Information: 0 : : ExtractParametersPlugin: deactivating... 
+[04/18/2021 05:44:41] End Inventor Core Engine standard output dump.
+[04/18/2021 05:44:41] End script phase.
+[04/18/2021 05:44:41] Start upload phase.
+[04/18/2021 05:44:41] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\drawings-list.json': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/8d081063-f387-49c6-96ec-bca1d036513e?region=US'
+[04/18/2021 05:44:41] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\adopt-messages.json': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/88e4814f-65e9-4f78-8b8d-e3de2d193942?region=US'
+[04/18/2021 05:44:41] Zipping directory T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\SvfOutput as T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\SvfOutput.zip.
+[04/18/2021 05:44:41] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\thumbnail.png': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/735fe020-92f5-4fc9-bfdb-242694bc3239?region=US'
+[04/18/2021 05:44:41] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\bom.json': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/d8f034fa-9b5b-4668-ab95-a8b22102d1e9?region=US'
+[04/18/2021 05:44:41] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\documentParams.json': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/abef41c6-18bf-411c-8a67-abb94281168a?region=US'
+[04/18/2021 05:44:41] Zipping directory T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam as T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam.zip.
+[04/18/2021 05:44:41] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\SvfOutput.zip': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/b2680a87-c31d-45e9-bc2e-a90bb50ca01d?region=US'
+[04/18/2021 05:44:42] Uploading 'T:\Aces\Jobs\f14654c7044a423e8f4fb60fb981d97a\unzippedIam.zip': verb - 'PUT', url - 'https://developer.api.autodesk.com/oss/v2/signedresources/e87d49e9-6c73-4e15-ab56-a16095827f0e?region=US'
+[04/18/2021 05:44:42] End upload phase successfully.
+[04/18/2021 05:44:42] Job finished with result Succeeded
+[04/18/2021 05:44:42] Job Status:
+{
+  "status": "success",
+  "reportUrl": "https://dasprod-store.s3.amazonaws.com/workItem/vgo9tNW26KwiinEEenskTAE1FUQz27VW/f14654c7044a423e8f4fb60fb981d97a/report.txt?AWSAccessKeyId=ASIATGVJZKM3IU64X6EY&Expires=1618814659&x-amz-security-token=IQoJb3JpZ2luX2VjEO7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIDyZV96ajsBPuXmSQVp9H3ui3qicw9oKUw3wDQTWk7J5AiBNaGs7dyrqWyyqPNnON7psSZrXP9e%2FLgV%2BAuVGcuH43irVAQhWEAIaDDIyMDQ3MzE1MjMxMCIMw6t9gFXh%2Bymq%2F2hmKrIBVmkaASm0uYNVQpAgl1lMlJvBj5A6wxSUg4YCvtrbD0owdwRKlpsCfkL3y4cYqKENB2hJL0gMMBXD5yeKtuiKg%2BI5ZTjqgevOFu0M0Pbu%2BVEHDan8BPGP1BAE%2B2MfhDHbHVW5Ds9OWQ1BxmxwSslRo%2FevJ2IY8kZUcyMKj6U%2FZ%2Fnqbb3sks%2Bq1jNrABmo%2BkbVT5o4KKFG1uB6dCluQVjTYyeTD8WS6%2FczChaXQMhPHLRtjzCi%2FO6DBjrhAVwPdANboEgnBwxeE4aEzo%2BoSVv7WQRMHmsTxBOGDEnbRUNDsxXCTz1aAGGtNFwxmmpI2Nxe9yS46bEm3JWQG7U2KxipSyHhYaHzqwpy3gKVRRiaoegvPGLMBqSWA7g3CWUxTrUYL9mJYPmQcdpO1ewAihTYyOvol9rcKoRAH318sHFRM8qIGPllupZCxpshGvDz9hVCbBzAefsUieY4yWySESAadgYFXCnx4stmYbvaeELp1XZtWfS4Ul9u7M5bZ9RSGv64pXJ%2BQgVH4Hwn5ihPUznN4BNQcmx40Ot%2FlSi3Qg%3D%3D&Signature=f46CmcBF6P9FT6PQ8cu4h8sWmjk%3D",
+  "stats": {
+    "timeQueued": "2021-04-18T05:44:18.8339354Z",
+    "timeDownloadStarted": "2021-04-18T05:44:18.9857682Z",
+    "timeInstructionsStarted": "2021-04-18T05:44:19.9174891Z",
+    "timeInstructionsEnded": "2021-04-18T05:44:41.5120519Z",
+    "timeUploadEnded": "2021-04-18T05:44:42.4768391Z",
+    "bytesDownloaded": 5954845,
+    "bytesUploaded": 7648636
+  },
+  "id": "f14654c7044a423e8f4fb60fb981d97a"
+}

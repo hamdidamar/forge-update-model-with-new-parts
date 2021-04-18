@@ -18,7 +18,7 @@
 
 import React, { Component } from 'react';
 import Script from 'react-load-script';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { getActiveProject } from '../reducers/mainReducer';
 import './forgeView.css';
 import Message from './message';
@@ -35,18 +35,48 @@ let Autodesk = window.Autodesk;
 
 export class ForgeView extends Component {
 
-    constructor(props){
-      super(props);
+    constructor(props) {
+        super(props);
 
-      this.viewerDiv = React.createRef();
-      this.viewer = null;
+        this.viewerDiv = React.createRef();
+        this.viewer = null;
+
+
     }
 
-    handleScriptLoad() {
+
+    //for GetUserProfile error
+    getToken() {
+        fetch("/api/viewables/GetThreeLeggedToken")
+            .then(response => response.text())
+            .then(function (token) {
+                console.log(token)
+                //repo.setAccessToken(token);
+                //console.log(repo.getAccessToken());
+            })
+    }
+
+    async handleScriptLoad() {
+
+        // const tokenResponse = await fetch("/api/viewables/token");
+        // const token = await tokenResponse.text();
+        // console.log(token)
+        // repo.setAccessToken(token);
+        //this.getToken();
+
+
+
+        //console.log(repo.getAccessToken());
 
         const options = repo.hasAccessToken() ?
-                            { accessToken: repo.getAccessToken() } :
-                            { env: 'Local' };
+            { accessToken: repo.getAccessToken() } :
+            { env: 'Local' };
+
+        // for 2 legged token
+        // const tokenResponse = await fetch("/api/viewables/token");
+        // const token = await tokenResponse.text();
+
+        // const options = { accessToken: token };
 
         Autodesk = window.Autodesk;
 
@@ -58,7 +88,7 @@ export class ForgeView extends Component {
 
 
         const container = this.viewerDiv.current;
-        this.viewer = new Autodesk.Viewing.GuiViewer3D(container, { extensions: ["AddPartToolExtension","EditModelToolExtension","DeleteModelExtension","ManualJointExtension"]});
+        this.viewer = new Autodesk.Viewing.GuiViewer3D(container, { extensions: ["AddPartToolExtension", "EditModelToolExtension", "DeleteModelExtension", "ManualJointExtension"] });
         window.viewer = this.viewer;
         // uncomment this for Viewer debugging
         //this.viewer.debugEvents(true);
@@ -93,21 +123,21 @@ export class ForgeView extends Component {
             return;
 
         Autodesk.Viewing.Document.load(
-            this.getSvfUrl(), this.onDocumentLoadSuccess.bind(this), () => {}
+            this.getSvfUrl(), this.onDocumentLoadSuccess.bind(this), () => { }
         );
     }
 
     componentDidUpdate(prevProps) {
         if (Autodesk && (this.props.activeProject.svf !== prevProps.activeProject.svf)) {
             Autodesk.Viewing.Document.load(
-                this.getSvfUrl(), this.onDocumentLoadSuccess.bind(this), () => {}
+                this.getSvfUrl(), this.onDocumentLoadSuccess.bind(this), () => { }
             );
         }
 
         // hide components parameter
         var parames = document.getElementsByClassName("parameter");
-        parames[4].style.display = "none";
-        parames[5].style.display = "none";
+        // parames[4].style.display = "none";
+        // parames[5].style.display = "none";
     }
 
     componentWillUnmount() {
@@ -130,11 +160,11 @@ export class ForgeView extends Component {
     render() {
         return (
             <div className="modelContainer fullheight">
-                <Message/>
-                <div className="viewer"  id="ForgeViewer"> {/* onDragOver={dragDrop.onDragOver} onDrop={dragDrop.onDrop}*/}
+                <Message />
+                <div className="viewer" id="ForgeViewer"> {/* onDragOver={dragDrop.onDragOver} onDrop={dragDrop.onDrop}*/}
                     <div ref={this.viewerDiv}></div>
-                    <link rel="stylesheet" type="text/css" href={ viewerCss } />
-                    <Script url={ viewerJs } onLoad={this.handleScriptLoad.bind(this)} />
+                    <link rel="stylesheet" type="text/css" href={viewerCss} />
+                    <Script url={viewerJs} onLoad={this.handleScriptLoad.bind(this)} />
                 </div>
             </div>
         );
@@ -142,8 +172,8 @@ export class ForgeView extends Component {
 }
 
 /* istanbul ignore next */
-export default connect(function (store){
+export default connect(function (store) {
     return {
-      activeProject: getActiveProject(store)
+        activeProject: getActiveProject(store)
     };
-  })(ForgeView);
+})(ForgeView);

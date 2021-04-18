@@ -36,5 +36,24 @@ namespace WebApplication.Controllers
             dynamic bearer = response.Data;
             return bearer.access_token;
         }
+
+        //[HttpGet("GetThreeLeggedToken")]
+        //public async Task<string> GetThreeLeggedToken()
+        //{
+        //    var threeLeggedApi = new ThreeLeggedApi();
+        //    Autodesk.Forge.Client.ApiResponse<dynamic> response =
+        //        await threeLeggedApi.GettokenAsyncWithHttpInfo(
+        //            _configuration.ClientId,
+        //            _configuration.ClientSecret,
+        //             oAuthConstants.CLIENT_CREDENTIALS,
+        //            null,
+        //            null
+        //           );
+
+        //    // The JSON response from the oAuth server is the Data variable 
+        //    // and has already been parsed into a DynamicDictionary object.
+        //    dynamic bearer = response.Data;
+        //    return bearer.access_token;
+        //}
     }
 }
