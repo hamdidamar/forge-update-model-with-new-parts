@@ -103,7 +103,7 @@ export default function RegisterAddPartTool() {
 
                 // for update model with main token
                 Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"] = originalAuthorizationHeader;
-                console.log(Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"]);
+                //console.log(Autodesk.Viewing.endpoint.HTTP_REQUEST_HEADERS["Authorization"]);
             };
             //-----MOUSE SETTINGS----------
             function normalize(screenPoint) {
@@ -274,11 +274,13 @@ export default function RegisterAddPartTool() {
             // }
 
 
-            function PlacementAgain(model) {
-
+            async function PlacementAgain(model) {
                 console.log(model);
+                // model = viewer.getAllModels().lastItem;
+                // console.log(model);
+
                 //var modelData = model.getData();
-                var iTree = model.getInstanceTree();
+                var iTree = await model.getInstanceTree();
 
                 var refFragId = null;
 

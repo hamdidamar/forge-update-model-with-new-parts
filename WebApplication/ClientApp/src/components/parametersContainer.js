@@ -67,20 +67,37 @@ export class ParametersContainer extends Component {
 
     updateClicked() {
 
-        //get information 
-        this.getPartsInfoWithPositions();
+        var modelLoadContainer = document.getElementById("modelLoadContainer");
+        var Width = this.props.projectUpdateParameters[1].value;
+        var Length = this.props.projectUpdateParameters[2].value;
+        var Height = this.props.projectUpdateParameters[3].value;
 
-        this.props.updateModelWithParameters(this.props.activeProject.id, this.props.projectUpdateParameters);
+        if (modelLoadContainer.style.display != "flex") {
 
-        // //clear all custom parameters
-        // this.props.projectUpdateParameters[4].value ="-";
-        // this.props.projectUpdateParameters[5].value ="-";
-        // this.props.projectUpdateParameters[6].value ="-";
+            if ( Width >= 500 && Length >= 500 && Height >=500 && Height <= 3500 ) {
+                //get information 
+                this.getPartsInfoWithPositions();
 
-        // mark drawing as not valid if any available
-        this.props.invalidateDrawing();
+                this.props.updateModelWithParameters(this.props.activeProject.id, this.props.projectUpdateParameters);
 
-        this.props.invalidateDrawing();
+                // //clear all custom parameters
+                // this.props.projectUpdateParameters[4].value ="-";
+                // this.props.projectUpdateParameters[5].value ="-";
+                // this.props.projectUpdateParameters[6].value ="-";
+
+                // mark drawing as not valid if any available
+                this.props.invalidateDrawing();
+
+                this.props.invalidateDrawing();
+            } else {
+                alertify.error("Please check the values ​​you entered")
+            }
+
+        }
+        else {
+            alertify.error("Please close extensions before update")
+        }
+
 
     }
 
@@ -273,14 +290,14 @@ export class ParametersContainer extends Component {
             //dimension
             this.props.projectUpdateParameters[4].value = "WallConstruction:" + this.props.projectUpdateParameters[0].value + ";Width:" + this.props.projectUpdateParameters[1].value.replace("mm", "") + ";Length:" + this.props.projectUpdateParameters[2].value.replace("mm", "") + ";Height:" + this.props.projectUpdateParameters[3].value.replace("mm", "");
         }
-        else{
+        else {
             //dimensions
             this.props.projectUpdateParameters[4].value = "-";
             //components
             this.props.projectUpdateParameters[6].value = "-";
         }
 
-        
+
 
 
         //panel and hardwares parameter
@@ -303,7 +320,7 @@ export class ParametersContainer extends Component {
         console.log("dimensions");
         console.log(this.props.projectUpdateParameters[4].value);
 
-        
+
 
     }
 
@@ -351,13 +368,13 @@ export class ParametersContainer extends Component {
 
                 // Fill joint parameter
                 this.props.projectUpdateParameters[5].value = "WallConstruction:" + this.props.projectUpdateParameters[0].value + ";Width:" + this.props.projectUpdateParameters[1].value + ";Length:" + this.props.projectUpdateParameters[2].value + ";Height:" + this.props.projectUpdateParameters[3].value + ";Joints:" + numericalValue + "-" + alphabeticalValue;
-                
+
 
                 // Then make update
                 this.updateClicked();
 
                 // joint parameter
-                this.props.projectUpdateParameters[5].value ="-";
+                this.props.projectUpdateParameters[5].value = "-";
 
                 this.isManualJointUpdate = false;
 
